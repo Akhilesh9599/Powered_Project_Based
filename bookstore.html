@@ -1,0 +1,187 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Bookstore</title> 
+    <style>         
+    body {             
+        display: flex;             
+        flex-direction: column;             
+        align-items: center;             
+        background-image: url('G.jpg');             
+        background-size: cover;             
+        margin: 5px;             
+        font-family: "Times New Roman", Times, serif; 
+        background-image: url(avi.avif);
+        } 
+        header {             
+            background:rgba(255, 0, 0, 0.4);             
+            color: darkcyan;             
+            padding:0;             
+            text-align: center;             
+            width: 100%;             
+            position: relative; 
+        } 
+        .search-bar { 
+            position: absolute; top: 10px; left: 50%; transform: translateX(-50%); 
+            width: 100%;              
+            max-width: 500px;              
+            display: flex;             
+            justify-content: space-between; 
+        } 
+        .search-bar input {             
+            width: 80%;             
+            padding: 4px;             
+            font-size: 13px;             
+            border: none;             
+            border-radius: 0px; 
+        } 
+        .search-bar button {             
+            width: 20%;             
+            padding: 3px;             
+            font-size: 16px;             
+            background-color: green;             
+            color: white;             
+            border: none;             
+            border-radius:0px;             
+            cursor: pointer; 
+        } 
+        .search-bar button:hover {             
+            background-color: red; 
+        } 
+        .book-list {             
+            display: flex;             
+            flex-wrap: wrap;             
+            justify-content: space-around;             
+            width: 90%;             
+            margin: 20px 0; 
+        } 
+        .book-item {             
+            border: 3px solid green;             
+            border-radius: 5px;             
+            margin: 15px;             
+            padding: 15px;             
+            width: 200px;             
+            text-align: center;              
+            background: rgba(255, 69, 0, 0.6); 
+        } 
+        .book-item img {             
+            max-width: 100%;             
+            height: auto;             
+            border-radius: 5px; 
+        } 
+        button {             
+            background: green; 
+            color: white; 
+            border: none; 
+            padding: 10px; border-radius: 5px; 
+            cursor: pointer; 
+        } 
+        button:hover {             
+            background: red; 
+        } 
+ 
+        nav { 
+            background: rgba(0, 255, 255, 0.5);             
+            color: white;             
+            padding: 4px;             
+            text-align: center;             
+            width: 99%; 
+        } 
+        nav a {             
+            color: black;             
+            text-decoration: none;             
+            margin: 17px;             
+            font-weight: bold; 
+        } 
+        nav a:hover {             
+            text-decoration: underline; 
+        } 
+    </style> 
+</head> 
+<body> 
+    <header> 
+        <br> 
+         <h1><p style="letter-spacing: 30px;"> BOOKSTORE</p></h1> 
+        <div class="search-bar"> 
+            <input type="text" id="searchInput" placeholder="Search for books..."> 
+            <button onclick="searchBooks()">Search</button> 
+        </div> 
+    </header> 
+    <nav> 
+        <a href="homepage.html">Home</a> 
+        <a href="bookstore.html">Books Store</a> 
+        <a href="cart.html">Cart</a> 
+        <a href="registration.html">Registration</a> 
+        <a href="login.html">Login</a> 
+    </nav> 
+    <section class="book-list"> 
+        <div class="book-item"> 
+            <img src="book10.jpg" alt="Bhagavad-Gita as It Is"> 
+            <h3>Swift River</h3> 
+            <p>Author: Essie Chambers
+            </p> 
+            <p>Price: $24.99</p> 
+            <button onclick="addToCart('Bhagavad-Gita as It Is', 14.95, 'Author: A.C. Prabhupada', 'book1.jpg')">Add to Cart</button> 
+        </div> 
+        <div class="book-item"> 
+            <img src="book11.jpg" alt="Eloquent Javascript"> 
+            <h3>Computer Programming Bible</h3>
+            <p>Author: C P a Inc</p> 
+            <p>Price: $20.99</p> 
+            <button onclick="addToCart('Eloquent Javascript', 39.99, 'Margin Haverbeke', 'book2.jpeg')">Add to Cart</button> 
+        </div> 
+        <div class="book-item"> 
+            <img src="book3.jpg" alt="Java for Dummies"> 
+            <h3>Java for Dummies</h3> 
+            <p>Author: Barry Burd</p> 
+            <p>Price: $14.99</p> 
+            <button onclick="addToCart('Java for Dummies', 14.99, 'Barry Burd', 'book3.jpg')">Add to Cart</button> 
+        </div> 
+        <div class="book-item"> 
+            <img src="book4.jpg" alt="A Project Guid to UX Design"> 
+            <h3>A Project Guid to UX Design</h3> 
+            <p>Author: Russ Unger</p> 
+            <p>Price: $51.04</p> 
+            <button onclick="addToCart('A Project Guid to UX Design', 51.04, 'Russ Unger', 'book4.jpg')">Add to Cart</button> 
+        </div> 
+        <div class="book-item"> 
+            <img src="book12.jpg" alt="An Illustrated Ramayan"> 
+            <h3>Computers For Seniors For Dummies</h3> 
+            <p>Author: Faithe Wempen</p> 
+            <p>Price: $24.99</p> 
+            <button onclick="addToCart('An Illustrated Ramayan', 19.99, 'Sonam Mantri', 'book5.jpg')">Add to Cart</button> 
+        </div> 
+        <div class="book-item"> 
+            <img src="book6.webp" alt="North American indian"> 
+            <h3>North American indian</h3> 
+            <p>Author: David Murdoch</p> 
+            <p>Price: $16.99</p> 
+            <button onclick="addToCart('North American indian', 16.99, 'David Murdoch', 'book6.webp')">Add to Cart</button> 
+        </div> 
+    </section>     
+    <script>         
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];         
+    function addToCart(bookName, bookPrice, bookAuthor, bookImage) {             
+        const alreadyInCart = cart.some(item => item.name === bookName);             
+        if (alreadyInCart) {                 
+            alert('This product is already added to your cart.');                 
+            return; 
+            } 
+            cart.push({name: bookName, price: bookPrice, author: bookAuthor, image: bookImage  
+            }); 
+            localStorage.setItem('cart', JSON.stringify(cart));             
+            alert(`${bookName} has been added to your cart!`); 
+        } 
+        function searchBooks() {             
+            const searchQuery = document.getElementById('searchInput').value.trim();             
+            if (searchQuery) {                 
+                alert('Searching for: ' + searchQuery); 
+            } else { 
+                alert('Please enter a book title to search.'); 
+            } 
+        } 
+    </script> 
+</body> 
+</html> 
